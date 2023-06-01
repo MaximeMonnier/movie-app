@@ -1,0 +1,51 @@
+.navigation-container{
+    display: flex;
+    margin: 30px;
+
+    a{
+        position: relative;
+        font-size: 18px;
+        margin-left: 20px;
+        animation: scaledown 0.4s linear;
+        animation-fill-mode: forwards;
+    }
+    a:hover {
+        z-index: 100;
+        animation: scale 0.4s linear;
+        animation-fill-mode: forwards;
+    }
+    a:after {
+        content: '';
+        position: absolute;
+        background-color: $color-2;
+        height: 3px;
+        width: 0;
+        left: 0;
+        bottom: -10px;
+        transition: 0.3s;
+    }
+    a:hover:after{
+        width: 100%;
+    }
+    @keyframes scaledown {
+        0%{
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+        100%{
+            -webkit-transform: scale(1.0);
+            transform: scale(1.0);
+        }
+    }
+
+    @keyframes scale {
+        0%{
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+        100%{
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+    }
+}

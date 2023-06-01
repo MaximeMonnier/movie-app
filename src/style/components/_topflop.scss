@@ -1,0 +1,22 @@
+.container-tf{
+    display: flex;
+    justify-content: center;
+
+    .container-anglobe{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background-color: $color-2;
+        margin-top: 10px;
+        width: 150px;
+        border-radius: 10px;
+        height: 30px;
+        color: $color-4;
+    }
+    .top{
+        cursor: pointer;
+    }
+    .flop{
+        cursor: pointer;
+    }
+}

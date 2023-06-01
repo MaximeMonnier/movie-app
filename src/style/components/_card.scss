@@ -1,0 +1,31 @@
+.container-card {
+    width: 270px;
+    margin: 15px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: $color-3;
+
+    .container-img{
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+
+        img{
+            height: 200px;
+            width: 60%;
+            border-radius: 20px;
+        }
+    }
+
+    .container-info{
+        margin: 20px 0 20px 20px;
+
+        h3{
+            color: white;
+            margin-top: 10px;
+        }
+        p{
+            overflow-wrap: break-word;
+        }
+    }
+}

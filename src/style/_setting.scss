@@ -1,0 +1,30 @@
+@font-face {
+    font-family: "font-1";
+    src: url(../assets/font/Geologica_Auto-Regular.ttf);
+}
+
+$font-1:"font-1",sans-serif;
+
+$color-1: #003366;
+$color-2: #009933;
+$color-3: #FF6600;
+$color-4: white;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: $color-1;
+    font-family: $font-1;
+}
+
+li {
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: $color-4;
+}
