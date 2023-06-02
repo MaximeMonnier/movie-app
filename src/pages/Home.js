@@ -2,8 +2,8 @@ import React from "react";
 import Navigations from "../components/Navigations";
 import Title from "../components/Title";
 import Recherche from "../components/Recherche";
-import TopFlop from "../components/TopFlop";
 import Card from "../components/Card";
+import Movies from "../components/Movies";
 
 const Home = () => {
   return (
@@ -11,7 +11,7 @@ const Home = () => {
       <Navigations />
       <Title />
       <Recherche />
-      <TopFlop />
+      <Movies />
       <Card />
     </div>
   );

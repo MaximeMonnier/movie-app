@@ -1,6 +1,7 @@
-.container-tf{
+.container-movies{
     display: flex;
     justify-content: center;
+    margin-bottom: 50px;
 
     .container-anglobe{
         display: flex;
@@ -8,7 +9,7 @@
         justify-content: space-around;
         background-color: $color-2;
         margin-top: 10px;
-        width: 150px;
+        width: 250px;
         border-radius: 10px;
         height: 30px;
         color: $color-4;
@@ -19,4 +20,9 @@
     .flop{
         cursor: pointer;
     }
+}
+.cardmovie{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
 }

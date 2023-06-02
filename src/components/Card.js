@@ -1,26 +1,29 @@
 import React from "react";
 
-const Card = () => {
+const Card = ({ movie }) => {
+  if (!movie) {
+    return null;
+  }
+  const lolo = "(https://image.tmdb.org/t/p/original/)";
+  const roro = movie.poster_path;
+  const final = lolo + roro;
+  console.log(final);
   return (
     <div className="container-card">
       <div className="container-img">
-        <img src="./assets/img/3551739.jpg" alt="toto" />
+        <img src={final} alt={movie.title} />
       </div>
       <div className="container-info">
-        <h3>Titre film</h3>
-        <p>date de sortie</p>
-        <h3>note</h3>
+        <h3>{movie.title}</h3>
+        <p>{movie.release_date}</p>
+        <h3>{movie.vote_average}</h3>
         <div className="container-span">
           <span>Catégorie</span>
           <span>Catégorie</span>
           <span>Catégorie</span>
         </div>
         <h3>Synopsis</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto
-          neque eveniet consequuntur sed sit. Hic quibusdam reiciendis molestias
-          esse tempora?
-        </p>
+        <p>{movie.overview}</p>
       </div>
     </div>
   );
