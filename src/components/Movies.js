@@ -28,16 +28,21 @@ const Movies = () => {
           </p>
         </div>
       </div>
+      <div className="lastmovie">
+        <h1>Les 20 dernières sortiess</h1>
+      </div>
       <div className="cardmovie">
-        {data.length > 0 ? (
-          <ul>
-            {data.map((movie) => (
-              <Card movie={movie} key={movie.id} />
-            ))}
-          </ul>
-        ) : (
-          <p>Loading...</p>
-        )}
+        <div className="container-crd">
+          {data.length > 0 ? (
+            <ul>
+              {data.map((movie) => (
+                <Card movie={movie} key={movie.id} />
+              ))}
+            </ul>
+          ) : (
+            <p>Loading...</p>
+          )}
+        </div>
       </div>
     </div>
   );

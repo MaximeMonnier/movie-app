@@ -4,10 +4,11 @@ const Card = ({ movie }) => {
   if (!movie) {
     return null;
   }
-  const lolo = "(https://image.tmdb.org/t/p/original/)";
-  const roro = movie.poster_path;
-  const final = lolo + roro;
+  const link = "https://image.tmdb.org/t/p/original/";
+  const path = movie.poster_path;
+  const final = link + path;
   console.log(final);
+
   return (
     <div className="container-card">
       <div className="container-img">
