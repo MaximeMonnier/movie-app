@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { createElement, useEffect, useState } from "react";
 import Card from "./Card";
 
 const Movies = () => {
@@ -8,7 +8,7 @@ const Movies = () => {
   useEffect(() => {
     axios
       .get(
-        "https://api.themoviedb.org/3/discover/movie?api_key=c9e98c1841bd2c13313ad35797a31570"
+        "https://api.themoviedb.org/3/discover/movie?api_key=c9e98c1841bd2c13313ad35797a31570&with_genres=28,12"
       )
       .then((res) => {
         setData(res.data.results);
@@ -29,7 +29,7 @@ const Movies = () => {
         </div>
       </div>
       <div className="lastmovie">
-        <h1>Les 20 dernières sortiess</h1>
+        <h1>Les 20 dernières sorties</h1>
       </div>
       <div className="cardmovie">
         <div className="container-crd">
@@ -40,7 +40,17 @@ const Movies = () => {
               ))}
             </ul>
           ) : (
-            <p>Loading...</p>
+            <div className="container-honey">
+              <div className="honeycomb">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
           )}
         </div>
       </div>
