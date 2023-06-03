@@ -2,8 +2,9 @@ import axios from "axios";
 import React, { createElement, useEffect, useState } from "react";
 import Card from "./Card";
 
-const Movies = () => {
+const Movies = ({ rech }) => {
   const [data, setData] = useState([]);
+  console.log(rech);
 
   useEffect(() => {
     axios
@@ -35,9 +36,13 @@ const Movies = () => {
         <div className="container-crd">
           {data.length > 0 ? (
             <ul>
-              {data.map((movie) => (
-                <Card movie={movie} key={movie.id} />
-              ))}
+              {data
+                .filter((movie) =>
+                  movie.title.toLowerCase().includes(rech.toLowerCase())
+                )
+                .map((movie) => (
+                  <Card movie={movie} key={movie.id} />
+                ))}
             </ul>
           ) : (
             <div className="container-honey">

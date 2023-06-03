@@ -11,7 +11,6 @@ const Home = () => {
       <Navigations />
       <Title />
       <Recherche />
-      <Movies />
       <Card />
     </div>
   );
