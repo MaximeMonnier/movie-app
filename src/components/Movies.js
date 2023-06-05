@@ -1,32 +1,33 @@
 import axios from "axios";
-import React, { createElement, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Card from "./Card";
 
 const Movies = ({ rech }) => {
   const [data, setData] = useState([]);
-  console.log(rech);
+  const [top, setTop] = useState(null);
+  const [flop, setFlop] = useState(null);
 
   useEffect(() => {
     axios
       .get(
-        "https://api.themoviedb.org/3/discover/movie?api_key=c9e98c1841bd2c13313ad35797a31570&with_genres=28,12"
+        `https://api.themoviedb.org/3/search/movie?api_key=c9e98c1841bd2c13313ad35797a31570&query=${rech}&language=fr-FR`
       )
       .then((res) => {
         setData(res.data.results);
         console.log(res.data.results);
       });
-  }, []);
+  }, [rech]);
 
   return (
     <div>
       <div className="container-movies">
         <div className="container-anglobe">
-          <p className="top">
+          <button className="top" onClick={() => setTop("goodtobad")}>
             Top <i className="fa-solid fa-arrow-up"></i>
-          </p>
-          <p className="flop">
+          </button>
+          <button className="flop" onClick={() => setFlop("badtogood")}>
             <i className="fa-solid fa-arrow-down"></i> Flop
-          </p>
+          </button>
         </div>
       </div>
       <div className="lastmovie">
@@ -37,9 +38,13 @@ const Movies = ({ rech }) => {
           {data.length > 0 ? (
             <ul>
               {data
-                .filter((movie) =>
-                  movie.title.toLowerCase().includes(rech.toLowerCase())
-                )
+                .sort((a, b) => {
+                  if (top === "goodtobad") {
+                    return b.vote_average - a.vote_average;
+                  } else if (flop === "badtogood") {
+                    return a.vote_average - b.vote_average;
+                  }
+                })
                 .map((movie) => (
                   <Card movie={movie} key={movie.id} />
                 ))}
