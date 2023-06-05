@@ -83,7 +83,11 @@ const Card = ({ movie }) => {
           break;
       }
     }
-    return arraygenre.map((genre) => <li key={genre}>{genre}</li>);
+    return arraygenre.map((genre) => (
+      <li key={genre} className="liste-genre">
+        {genre}
+      </li>
+    ));
   };
 
   return (
@@ -99,12 +103,10 @@ const Card = ({ movie }) => {
           <i className="fa-solid fa-star note"></i>
         </h3>
         <div className="container-span">
-          <ul>
-            <span>{movieGenre()}</span>
-          </ul>
+          <ul>{movieGenre()}</ul>
         </div>
+        <h3>Synopsis</h3>
         <div className="container-synop">
-          <h3>Synopsis</h3>
           <p>{movie.overview}</p>
         </div>
         <div className="ctn-btn">
