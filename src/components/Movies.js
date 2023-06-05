@@ -22,12 +22,21 @@ const Movies = ({ rech }) => {
     <div>
       <div className="container-movies">
         <div className="container-anglobe">
-          <button className="top" onClick={() => setTop("goodtobad")}>
+          <div className="top" onClick={() => setTop("goodtobad")}>
             Top <i className="fa-solid fa-arrow-up"></i>
-          </button>
-          <button className="flop" onClick={() => setFlop("badtogood")}>
+          </div>
+          <div
+            className="cancel"
+            onClick={() => {
+              setTop(null);
+              setFlop(null);
+            }}
+          >
+            Cancel
+          </div>
+          <div className="flop" onClick={() => setFlop("badtogood")}>
             <i className="fa-solid fa-arrow-down"></i> Flop
-          </button>
+          </div>
         </div>
       </div>
       <div className="lastmovie">

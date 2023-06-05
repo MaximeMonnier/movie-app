@@ -8,7 +8,9 @@ const Navigations = () => {
         <li>Accueil</li>
       </NavLink>
       <NavLink to="/coup-de-coeur">
-        <li>Coup de coeur</li>
+        <li>
+          Coup de coeur &nbsp; <i class="fa-solid fa-frog"></i>
+        </li>
       </NavLink>
     </div>
   );

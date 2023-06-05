@@ -15,17 +15,42 @@
         color: $color-4;
     }
     .top{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         cursor: pointer;
+        width: 33.33%;
+        height: 100%;
+        border-radius: 10px 0 0 10px;
+    }
+    .cancel{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $color-1;
+        cursor: pointer;
+        width: 33.35%;
+        height: 100%;
     }
     .flop{
+        border-radius: 0 10px 10px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         cursor: pointer;
+        width: 33.33%;
+        height: 100%;
     }
     .top:hover{
-        background-color: $color-1;
+        background-color: $color-3;
+        cursor: pointer;
+    }
+    .cancel:hover{
+        background-color: $color-2;
         cursor: pointer;
     }
     .flop:hover{
-        background-color: $color-1;
+        background-color: $color-3;
         cursor: pointer;
     }
 }

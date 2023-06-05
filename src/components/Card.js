@@ -103,8 +103,16 @@ const Card = ({ movie }) => {
             <span>{movieGenre()}</span>
           </ul>
         </div>
-        <h3>Synopsis</h3>
-        <p>{movie.overview}</p>
+        <div className="container-synop">
+          <h3>Synopsis</h3>
+          <p>{movie.overview}</p>
+        </div>
+        <div className="ctn-btn">
+          <div className="addbtn">
+            Ajouter aux coup de coeur&nbsp;
+            <i className="fa-solid fa-frog"></i>
+          </div>
+        </div>
       </div>
     </div>
   );
