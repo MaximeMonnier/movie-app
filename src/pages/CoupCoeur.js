@@ -35,16 +35,18 @@ const CoupCoeur = (s) => {
                 ))}
               </ul>
             ) : (
-              <div className="container-honey">
-                <h2>Aucun coup de coeur pour le moments</h2>
-                <div className="honeycomb">
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
+              <div className="result">
+                <div className="container-honey">
+                  <h2>Aucun coup de coeur pour le moments</h2>
+                  <div className="honeycomb">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
                 </div>
               </div>
             )}

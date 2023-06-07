@@ -88,31 +88,43 @@ const CardCoeur = ({ coeur }) => {
     ));
   };
 
+  const deleteStorage = () => {
+    window.localStorage.clear();
+  };
+
+  const deleteIdStorage = () => {
+    console.log("coucou");
+    // window.localStorage.removeItem(coeur.id);
+  };
+
   return (
-    <div className="container-crd">
-      <div className="container-card">
-        <div className="container-img">
-          <img src={final} alt={coeur.title} />
-        </div>
-        <div className="container-info">
-          <h3>{coeur.title}</h3>
-          <p>{invertedDate}</p>
-          <h3>
-            {coeur.vote_average.toFixed(1)}&nbsp;&nbsp;
-            <i className="fa-solid fa-star note"></i>
-          </h3>
-          <div className="container-span">
-            <ul></ul>
+    <div>
+      <button onClick={deleteStorage()}>vider les favoris</button>
+      <div className="container-crd">
+        <div className="container-card">
+          <div className="container-img">
+            <img src={final} alt={coeur.title} />
           </div>
-          <h3>Synopsis</h3>
-          <div className="container-synop">
-            <p>{coeur.overview}</p>
-          </div>
-          <div className="ctn-btn">
-            <button className="addbtn">
-              Suprimer de la liste&nbsp;
-              <i className="fa-solid fa-frog"></i>
-            </button>
+          <div className="container-info">
+            <h3>{coeur.title}</h3>
+            <p>{invertedDate}</p>
+            <h3>
+              {coeur.vote_average.toFixed(1)}&nbsp;&nbsp;
+              <i className="fa-solid fa-star note"></i>
+            </h3>
+            <div className="container-span">
+              <ul></ul>
+            </div>
+            <h3>Synopsis</h3>
+            <div className="container-synop">
+              <p>{coeur.overview}</p>
+            </div>
+            <div className="ctn-btn">
+              <button className="addbtn" onClick={deleteIdStorage()}>
+                Suprimer de la liste&nbsp;
+                <i className="fa-solid fa-frog"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
