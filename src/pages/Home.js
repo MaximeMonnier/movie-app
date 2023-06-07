@@ -3,13 +3,12 @@ import Navigations from "../components/Navigations";
 import Title from "../components/Title";
 import Recherche from "../components/Recherche";
 import Card from "../components/Card";
-import Movies from "../components/Movies";
 
 const Home = () => {
   return (
     <div>
       <Navigations />
-      <Title />
+      <Title activePage="home" />
       <Recherche />
       <Card />
     </div>

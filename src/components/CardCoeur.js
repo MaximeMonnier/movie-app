@@ -1,17 +1,13 @@
 import React from "react";
 
-const Card = ({ movie }) => {
-  if (!movie || !movie.genre_ids) {
-    return null;
-  }
-
+const CardCoeur = ({ coeur }) => {
   // picture path
   const link = "https://image.tmdb.org/t/p/original/";
-  const path = movie.poster_path;
+  const path = coeur.poster_path;
   const final = link + path;
 
   // change english date to French date format
-  const originalDate = movie.release_date;
+  const originalDate = coeur.release_date;
   const parts = originalDate.split("-");
   const year = parts[0];
   const month = parts[1];
@@ -21,8 +17,8 @@ const Card = ({ movie }) => {
   // Movie genre by id
   const movieGenre = () => {
     let arraygenre = [];
-    for (let i = 0; i < movie.genre_ids.length; i++) {
-      switch (movie.genre_ids[i]) {
+    for (let i = 0; i < coeur.genre_ids.length; i++) {
+      switch (coeur.genre_ids[i]) {
         case 28:
           arraygenre.push("Action");
           break;
@@ -84,6 +80,7 @@ const Card = ({ movie }) => {
           break;
       }
     }
+
     return arraygenre.map((genre) => (
       <li key={genre} className="liste-genre">
         {genre}
@@ -91,45 +88,36 @@ const Card = ({ movie }) => {
     ));
   };
 
-  const addStorge = () => {
-    let storedData = window.localStorage.movies
-      ? window.localStorage.movies.split(",")
-      : [];
-
-    if (!storedData.includes(movie.id.toString())) {
-      storedData.push(movie.id);
-      window.localStorage.movies = storedData;
-    }
-  };
-
   return (
-    <div className="container-card">
-      <div className="container-img">
-        <img src={final} alt={movie.title} />
-      </div>
-      <div className="container-info">
-        <h3>{movie.title}</h3>
-        <p>{invertedDate}</p>
-        <h3>
-          {movie.vote_average}&nbsp;&nbsp;
-          <i className="fa-solid fa-star note"></i>
-        </h3>
-        <div className="container-span">
-          <ul>{movieGenre()}</ul>
+    <div className="container-crd">
+      <div className="container-card">
+        <div className="container-img">
+          <img src={final} alt={coeur.title} />
         </div>
-        <h3>Synopsis</h3>
-        <div className="container-synop">
-          <p>{movie.overview}</p>
-        </div>
-        <div className="ctn-btn">
-          <button className="addbtn" onClick={addStorge()}>
-            Ajouter aux coup de coeur&nbsp;
-            <i className="fa-solid fa-frog"></i>
-          </button>
+        <div className="container-info">
+          <h3>{coeur.title}</h3>
+          <p>{invertedDate}</p>
+          <h3>
+            {coeur.vote_average.toFixed(1)}&nbsp;&nbsp;
+            <i className="fa-solid fa-star note"></i>
+          </h3>
+          <div className="container-span">
+            <ul></ul>
+          </div>
+          <h3>Synopsis</h3>
+          <div className="container-synop">
+            <p>{coeur.overview}</p>
+          </div>
+          <div className="ctn-btn">
+            <button className="addbtn">
+              Suprimer de la liste&nbsp;
+              <i className="fa-solid fa-frog"></i>
+            </button>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default Card;
+export default CardCoeur;

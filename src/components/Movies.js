@@ -55,7 +55,11 @@ const Movies = ({ rech }) => {
                   }
                 })
                 .map((movie) => (
-                  <Card movie={movie} key={movie.id} />
+                  <Card
+                    onClick={(e) => console.log(e.target.value)}
+                    movie={movie}
+                    key={movie.id}
+                  />
                 ))}
             </ul>
           ) : (
