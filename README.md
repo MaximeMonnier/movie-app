@@ -1,3 +1,9 @@
+# MOVINEA
+
+## MOVINEA is a app where you find any movie than you lookin for
+
+![Alt text](<public/assets/img/Capture%20d%E2%80%99%C3%A9cran%20(243).png>)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
