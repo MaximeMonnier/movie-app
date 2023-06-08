@@ -4,6 +4,29 @@
 
 ![Alt text](<public/assets/img/Capture%20d%E2%80%99%C3%A9cran%20(243).png>)
 
+## Live Demo
+
+A live demo is available here (https://build-app-movie.vercel.app/)
+
+## How to use
+
+Clone the repo https://github.com/MaximeMonnier/first-step-in-react.git,
+
+In you file with bash made npm install to install all the packages,
+
+To watch the project npm start,
+
+To use the blog section npm run server
+
+# Technologies used
+
+JavaScript, React 18.1.0 SCSS
+sass 1.62.1
+
+## How does it work ?
+
+This application uses the TMDB API. The application displays on the main page the last movie output, you can search for which movie and add it to your favorites
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
