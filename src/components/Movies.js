@@ -2,15 +2,16 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
 
-const Movies = ({ rech }) => {
+const Movies = ({ rech, latest }) => {
   const [data, setData] = useState([]);
   const [top, setTop] = useState(null);
   const [flop, setFlop] = useState(null);
+  console.log(latest);
 
   useEffect(() => {
     axios
       .get(
-        `https://api.themoviedb.org/3/search/movie?api_key=c9e98c1841bd2c13313ad35797a31570&query=${rech}&language=fr-FR`
+        `https://api.themoviedb.org/3/${latest}/movie?api_key=c9e98c1841bd2c13313ad35797a31570&query=${rech}&language=fr-FR`
       )
       .then((res) => {
         setData(res.data.results);
@@ -40,7 +41,11 @@ const Movies = ({ rech }) => {
         </div>
       </div>
       <div className="lastmovie">
-        <h1>Les 20 dernières sorties</h1>
+        {latest === "discover" ? (
+          <h1>Les 20 dernières sorties</h1>
+        ) : (
+          <h1>Resultat de votre recherche</h1>
+        )}
       </div>
       <div className="cardmovie">
         <div className="container-crd">

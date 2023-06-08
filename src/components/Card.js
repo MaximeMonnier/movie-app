@@ -92,6 +92,7 @@ const Card = ({ movie }) => {
   };
 
   const addStorge = () => {
+    const btnstor = document.querySelector(".addbtn");
     let storedData = window.localStorage.movies
       ? window.localStorage.movies.split(",")
       : [];

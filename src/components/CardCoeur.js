@@ -15,10 +15,10 @@ const CardCoeur = ({ coeur }) => {
   const invertedDate = day + "-" + month + "-" + year;
 
   // Movie genre by id
-  const movieGenre = () => {
+  const coeurGenre = () => {
     let arraygenre = [];
-    for (let i = 0; i < coeur.genre_ids.length; i++) {
-      switch (coeur.genre_ids[i]) {
+    for (let i = 0; i < coeur.genre; i++) {
+      switch (coeur.genre[i]) {
         case 28:
           arraygenre.push("Action");
           break;
@@ -119,7 +119,7 @@ const CardCoeur = ({ coeur }) => {
               <i className="fa-solid fa-star note"></i>
             </h3>
             <div className="container-span">
-              <ul></ul>
+              <ul>{coeurGenre()}</ul>
             </div>
             <h3>Synopsis</h3>
             <div className="container-synop">

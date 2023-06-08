@@ -6,6 +6,7 @@ import CardCoeur from "../components/CardCoeur";
 
 const CoupCoeur = () => {
   const [listData, setListData] = useState([]);
+  console.log(listData);
 
   useEffect(() => {
     let moviesId = window.localStorage.movies
@@ -17,7 +18,10 @@ const CoupCoeur = () => {
         .get(
           `https://api.themoviedb.org/3/movie/${moviesId[i]}?api_key=c9e98c1841bd2c13313ad35797a31570`
         )
-        .then((res) => setListData((listData) => [...listData, res.data]));
+        .then((res) => {
+          setListData((listData) => [...listData, res.data]);
+          console.log(res);
+        });
     }
   }, []);
 
@@ -31,8 +35,10 @@ const CoupCoeur = () => {
     <div>
       <Navigations />
       <Title />
-      <div id="container-elementCoeur">
+      <div className="btn-vider">
         <button onClick={deleteStorage}>vider les favoris</button>
+      </div>
+      <div id="container-elementCoeur">
         <div className="cardmovie">
           <div className="container-crd">
             {listData.length > 0 ? (
