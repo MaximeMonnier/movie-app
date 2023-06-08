@@ -1,6 +1,6 @@
 # MOVINEA
 
-## MOVINEA is a app where you find any movie than you lookin for
+## MOVINEA is an app where you find any movie than you looking for
 
 ![Alt text](<public/assets/img/Capture%20d%E2%80%99%C3%A9cran%20(243).png>)
 
@@ -10,7 +10,7 @@ A live demo is available here (https://build-app-movie.vercel.app/)
 
 ## How to use
 
-Clone the repo https://github.com/MaximeMonnier/first-step-in-react.git,
+Clone the repo https://github.com/MaximeMonnier/movie-app.git,
 
 In you file with bash made npm install to install all the packages,
 
