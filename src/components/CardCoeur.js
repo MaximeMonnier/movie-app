@@ -88,18 +88,24 @@ const CardCoeur = ({ coeur }) => {
     ));
   };
 
-  const deleteStorage = () => {
-    window.localStorage.clear();
-  };
+  const deleteIdStorage = (id) => {
+    const ero = document.getElementById(coeur.id);
+    let storage = window.localStorage.movies;
+    let movieIds = storage ? storage.split(",") : [];
 
-  const deleteIdStorage = () => {
-    console.log("coucou");
-    // window.localStorage.removeItem(coeur.id);
+    let movieIdString = String(id);
+    let index = movieIds.indexOf(movieIdString);
+
+    if (index !== -1) {
+      movieIds.splice(index, 1); // Supprimer l'ID du tableau
+      let updatedStorage = movieIds.join(","); // Convertir le tableau en une chaîne de caractères avec une virgule comme séparateur
+      window.localStorage.movies = updatedStorage; // Mettre à jour le local storage avec la nouvelle chaîne de caractères d'IDs
+      ero.remove();
+    }
   };
 
   return (
-    <div>
-      <button onClick={deleteStorage()}>vider les favoris</button>
+    <div id={coeur.id}>
       <div className="container-crd">
         <div className="container-card">
           <div className="container-img">
@@ -120,7 +126,10 @@ const CardCoeur = ({ coeur }) => {
               <p>{coeur.overview}</p>
             </div>
             <div className="ctn-btn">
-              <button className="addbtn" onClick={deleteIdStorage()}>
+              <button
+                className="addbtn"
+                onClick={() => deleteIdStorage(coeur.id)}
+              >
                 Suprimer de la liste&nbsp;
                 <i className="fa-solid fa-frog"></i>
               </button>

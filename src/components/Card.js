@@ -122,7 +122,7 @@ const Card = ({ movie }) => {
           <p>{movie.overview}</p>
         </div>
         <div className="ctn-btn">
-          <button className="addbtn" onClick={addStorge()}>
+          <button className="addbtn" onClick={addStorge}>
             Ajouter aux coup de coeur&nbsp;
             <i className="fa-solid fa-frog"></i>
           </button>

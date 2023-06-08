@@ -4,7 +4,7 @@ import Title from "../components/Title";
 import axios from "axios";
 import CardCoeur from "../components/CardCoeur";
 
-const CoupCoeur = (s) => {
+const CoupCoeur = () => {
   const [listData, setListData] = useState([]);
 
   useEffect(() => {
@@ -21,11 +21,18 @@ const CoupCoeur = (s) => {
     }
   }, []);
 
+  const deleteStorage = () => {
+    const containerCoeur = document.getElementById("container-elementCoeur");
+    window.localStorage.clear();
+    containerCoeur.remove();
+  };
+
   return (
     <div>
       <Navigations />
       <Title />
-      <div>
+      <div id="container-elementCoeur">
+        <button onClick={deleteStorage}>vider les favoris</button>
         <div className="cardmovie">
           <div className="container-crd">
             {listData.length > 0 ? (
